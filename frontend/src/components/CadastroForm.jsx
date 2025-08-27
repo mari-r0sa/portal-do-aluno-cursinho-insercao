@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styled from 'styled-components';
-import "../styles/cadastroForm.css";
 
 const Form = styled.form`
     margin: 2.5% 20% 2.5% 20%;
