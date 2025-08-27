@@ -11,13 +11,13 @@ import img from '../assets/imgs/img_capa_exemplo.jpg'
     `
 
     const Titulo = styled.h3`
-        font-size: 24px;
+        font-size: 30px;
         text-align: center;
         margin: 0 0 2% 0;
     `
 
     const Texto = styled.p`
-        font-size: 16px;
+        font-size: 18px;
         line-height: 20px;
         margin: 2% 0 0 0;
         text-align: center;
