@@ -1,6 +1,6 @@
 package pt.cursinhoinsercao.portalaluno.dao;
 
-import pt.cursinhoinsercao.portalaluno.Usuario;
+import pt.cursinhoinsercao.portalaluno.entity.Usuario;
 import pt.cursinhoinsercao.portalaluno.util.JPAUtil;
 
 import javax.persistence.EntityManager;

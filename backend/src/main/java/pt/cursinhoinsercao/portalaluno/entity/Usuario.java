@@ -1,4 +1,4 @@
-package pt.cursinhoinsercao.portalaluno;
+package pt.cursinhoinsercao.portalaluno.entity;
 
 import javax.persistence.*;
 

@@ -9,8 +9,8 @@
     <persistence-unit name="portal-aluno-pu" transaction-type="RESOURCE_LOCAL">
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>pt.cursinhoinsercao.portalaluno.Usuario</class>
-        <class>pt.cursinhoinsercao.portalaluno.Secao</class>
+        <class>pt.cursinhoinsercao.portalaluno.entity.Usuario</class>
+        <class>pt.cursinhoinsercao.portalaluno.entity.Secao</class>
 
         <properties>
 
