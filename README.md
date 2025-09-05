@@ -25,3 +25,6 @@ Ex:
 ## Ambiente de teste
 Vercel Preview
 
+## Administração de atividades
+https://projetos-catolica.atlassian.net/jira/software/projects/CI/boards/3
+
