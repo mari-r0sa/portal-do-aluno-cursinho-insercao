@@ -2,6 +2,7 @@ package pt.cursinhoinsercao.portalaluno.resource;
 
 import pt.cursinhoinsercao.portalaluno.entity.Secao;
 import pt.cursinhoinsercao.portalaluno.service.SecaoService;
+import pt.cursinhoinsercao.portalaluno.seguranca.Seguranca;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -15,6 +16,7 @@ public class SecaoResource {
 
     private SecaoService secaoService = new SecaoService();
 
+    //Qualquer um pode ver as seções na homepage.
     @GET
     public Response buscarTodas() {
         List<Secao> secoes = secaoService.buscarTodas();
@@ -31,7 +33,9 @@ public class SecaoResource {
         return Response.status(Response.Status.NOT_FOUND).build();
     }
 
+    //Apenas admins podem criar seções.
     @POST
+    @Seguranca
     public Response criar(Secao novaSecao) {
         try {
             Secao secaoCriada = secaoService.criar(novaSecao);
@@ -41,8 +45,10 @@ public class SecaoResource {
         }
     }
 
+    //Apenas admins podem atualizar seções.
     @PUT
     @Path("/{id}")
+    @Seguranca
     public Response atualizar(@PathParam("id") int id, Secao secaoAtualizada) {
         try {
             Secao secao = secaoService.atualizar(id, secaoAtualizada);
@@ -52,8 +58,10 @@ public class SecaoResource {
         }
     }
 
+    //Apenas admins podem remover seções.
     @DELETE
     @Path("/{id}")
+    @Seguranca
     public Response deletar(@PathParam("id") int id) {
         try {
             secaoService.deletar(id);
