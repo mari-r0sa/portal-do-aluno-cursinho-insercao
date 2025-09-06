@@ -11,9 +11,21 @@ const Div = styled.div`
 `
 
 const TituloPag = styled.h3`
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: #0D76B8;
+
+    @media (max-width: 1500px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 1000px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+    }
 `
 
 const Form = styled.form`
@@ -39,6 +51,18 @@ const TituloAval = styled.p`
     font-size: 18px;
     font-weight: 500;
     color: #0D76B8;
+
+    @media (max-width: 1500px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 1000px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+    }
 `
 
 const Select = styled.select`
@@ -69,6 +93,18 @@ const Nome = styled.p`
     font-size: 16px;
     font-weight: 400;
     color: #000000;
+
+    @media (max-width: 1500px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 1000px) {
+        font-size: 13px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+    }
 `
 
 const Input = styled.input`
