@@ -41,6 +41,8 @@ CREATE TABLE `avaliacoes` (
 CREATE TABLE `banner` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `imagem` varchar(300) NOT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT 0,
+  `data_criacao` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
