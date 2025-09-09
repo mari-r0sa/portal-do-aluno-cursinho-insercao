@@ -428,7 +428,7 @@ const LogoutText = styled.span`
 
 // ========== COMPONENTE REACT ==========
 
-export default function PortalSidebar() {
+export default function AdminSidebar() {
   // Estados do componente
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -526,38 +526,34 @@ export default function PortalSidebar() {
   const menuGroups = [
     {
       id: 1,
-      title: 'Recados e conteúdos',
+      title: 'Educadores populares',
       emoji: '👥',
       submenu: [
-        'Recados gerais',
-        'Criar novo recado',
-        'Conteúdos',
-        'Postar novo conteúdo'
+        'Novas candidaturas',
+        'Educadores cadastrados'
       ]
     },
     {
       id: 2,
-      title: 'Frequência',
+      title: 'Controle de alunos',
       emoji: '🎓',
       submenu: [
-        'Verificar frequência',
-        'Lançar frequência'
+        'Novas matrículas',
+        'Alunos matriculados'
       ]
     },
     {
       id: 3,
-      title: 'Notas',
+      title: 'Redes sociais',
       emoji: '📱',
       submenu: [
-        'Ver notas',
-        'Lançar notas',
-        'Criar nova avaliação',
-        'Avaliações cadastradas'
+        'Redes cadastradas',
+        'Cadastrar nova rede'
       ]
     },
     {
       id: 4,
-      title: 'Seu perfil',
+      title: 'Relatório de Universidades',
       emoji: '📊',
       submenu: null // Sem submenu
     }
