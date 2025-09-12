@@ -1,55 +1,110 @@
 import { useState } from "react";
-import "../styles/cadastroForm.css";
+import styled from 'styled-components';
+
+const Form = styled.form`
+    margin: 2.5% 20% 2.5% 20%;
+    width: 60%;
+    padding: 5%;
+    line-height: 40px;
+    font-size: 20px;
+    border-radius: 30px;
+    background-color: #FDF5E0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+const Lin = styled.div`
+    width: 100%;
+    height: 20%;
+    margin: 1% 0 1% 0;
+    display: flex;
+    flex-direction: column;
+`
+
+const NomeCampo = styled.p`
+    color: #E23467;
+    align-self: flex-start;
+`
+
+const Campo = styled.input`
+    width: 100%;
+    padding: 15px;
+    border: 3px solid #0DA9B8;
+    border-radius: 15px;
+    font-size: 18px;
+`
+
+const Select = styled.select`
+    width: 100%;
+    padding: 15px;
+    border: 3px solid #0DA9B8;
+    border-radius: 15px;
+    appearance: none;
+    outline: none; 
+`
+
+const Botao = styled.button`
+    width: 35%;
+    min-height: 60px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    margin: 5% 0 0 0;
+    border: none;
+    color: #FFFFFF;
+    background-color: #F2B924;
+`
 
 export default function CadastroForm() {
 
     const [tipo, setTipo] = useState("");
 
     return (
-        <form className="formCadastro">
-            <div class="linCampo">
-                <p className="nomeCampo">Nome completo</p>
-                <input id="nome" className="campo" type="text" placeholder="Digite seu nome e sobrenome"></input>
-            </div>
-            <div class="linCampo">
-                <p className="nomeCampo">E-mail</p>
-                <input id="email" className="campo" type="email" placeholder="Digite seu e-mail"></input>
-            </div>
-            <div class="linCampo">
-                <p className="nomeCampo">Telefone</p>
-                <input id="tel" className="campo" type="number" placeholder="Digite seu telefone (apenas números)"></input>
-            </div>
-            <div class="linCampo">
-                <p className="nomeCampo">Senha</p>
-                <input id="senha" className="campo" type="password" placeholder="Digite sua senha"></input>
-            </div>
-            <div class="linCampo">
-                <p className="nomeCampo">Confirme sua senha</p>
-                <input id="confirmSenha" className="campo" type="password" placeholder="Digite novamente a sua senha"></input>
-            </div>
-            <div className="linCampo">
-                <p className="nomeCampo">Como deseja se cadastrar?</p>
-                <select id="tipo" className="campo" value={tipo} onChange={(e) => setTipo(e.target.value)}>
-                <option value="">Selecione</option>
-                <option value="1">Estudante</option>
-                <option value="2">Educador popular</option>
-                </select>
-            </div>
+        <Form>
+            <Lin>
+                <NomeCampo>Nome completo</NomeCampo>
+                <Campo id="nome" type="text" placeholder="Digite seu nome e sobrenome"></Campo>
+            </Lin>
+            <Lin>
+                <NomeCampo>E-mail</NomeCampo>
+                <Campo id="email" type="email" placeholder="Digite seu e-mail"></Campo>
+            </Lin>
+            <Lin>
+                <NomeCampo>Telefone</NomeCampo>
+                <Campo id="tel" type="number" placeholder="Digite seu telefone (apenas números)"></Campo>
+            </Lin>
+            <Lin>
+                <NomeCampo>Senha</NomeCampo>
+                <Campo id="senha" type="password" placeholder="Digite sua senha"></Campo>
+            </Lin>
+            <Lin>
+                <NomeCampo>Confirme sua senha</NomeCampo>
+                <Campo id="confirmSenha" type="password" placeholder="Digite novamente a sua senha"></Campo>
+            </Lin>
+            <Lin>
+                <NomeCampo>Como deseja se cadastrar?</NomeCampo>
+                <Select id="tipo" value={tipo} onChange={(e) => setTipo(e.target.value)}>
+                    <option value="">Selecione</option>
+                    <option value="1">Estudante</option>
+                    <option value="2">Educador popular</option>
+                </Select>
+            </Lin>
 
             {tipo === "2" && (
-                <div className="linCampo">
-                <p className="nomeCampo">Qual a sua área do conhecimento?</p>
-                <select id="areaConhecimento" className="campo">
-                    <option>Ciências da Natureza e Suas Tecnologias</option>
-                    <option>Ciências Humanas e Suas Tecnologias</option>
-                    <option>linCampoguagens e Suas Tecnologias</option>
-                    <option>Matemática e Suas Tecnologias</option>
-                    <option>Redação</option>
-                </select>
-                </div>
+                <Lin className="linCampo">
+                    <NomeCampo>Qual a sua área do conhecimento?</NomeCampo>
+                    <Select id="areaConhecimento">
+                        <option>Ciências da Natureza e Suas Tecnologias</option>
+                        <option>Ciências Humanas e Suas Tecnologias</option>
+                        <option>linCampoguagens e Suas Tecnologias</option>
+                        <option>Matemática e Suas Tecnologias</option>
+                        <option>Redação</option>
+                    </Select>
+                </Lin>
             )}
 
-            <button className="botao" type="submit">Cadastrar-se</button>
-        </form>
+            <Botao type="submit">Cadastrar-se</Botao>
+        </Form>
     );
 }
